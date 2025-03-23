@@ -4,6 +4,7 @@ import base64
 key = b'secretkey'
 cipher = ARC4.new(key)
 
+
 message = "Hello, RC4!"
 ciphertext = cipher.encrypt(message.encode())
 
