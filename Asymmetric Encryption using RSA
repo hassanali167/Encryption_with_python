@@ -1,0 +1,23 @@
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_OAEP
+import base64
+
+# Generate key pair
+key = RSA.generate(2048)
+public_key = key.publickey().export_key()
+private_key = key.export_key()
+
+# Encrypt message
+message = "Hello, Secure World!"
+rsa_public_key = RSA.import_key(public_key)
+cipher = PKCS1_OAEP.new(rsa_public_key)
+ciphertext = cipher.encrypt(message.encode())
+
+print("Ciphertext:", base64.b64encode(ciphertext).decode())
+
+# Decrypt message
+rsa_private_key = RSA.import_key(private_key)
+cipher = PKCS1_OAEP.new(rsa_private_key)
+decrypted_message = cipher.decrypt(ciphertext).decode()
+
+print("Decrypted Message:", decrypted_message)
