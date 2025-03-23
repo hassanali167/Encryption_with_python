@@ -1,0 +1,16 @@
+from Crypto.Cipher import ARC4
+import base64
+
+key = b'secretkey'
+cipher = ARC4.new(key)
+
+message = "Hello, RC4!"
+ciphertext = cipher.encrypt(message.encode())
+
+print("Ciphertext:", base64.b64encode(ciphertext).decode())
+
+# Decrypt
+cipher = ARC4.new(key)
+decrypted_message = cipher.decrypt(ciphertext).decode()
+
+print("Decrypted Message:", decrypted_message)
