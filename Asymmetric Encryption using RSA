@@ -1,11 +1,11 @@
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP
 import base64
-
 # Generate key pair
 key = RSA.generate(2048)
 public_key = key.publickey().export_key()
 private_key = key.export_key()
+
 
 # Encrypt message
 message = "Hello, Secure World!"
