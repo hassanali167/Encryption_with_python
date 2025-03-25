@@ -1,6 +1,5 @@
 from Crypto.Cipher import AES
 import base64
-
 # 16-byte key (AES-128)
 key = b'1234567890123456'  
 cipher = AES.new(key, AES.MODE_EAX)
