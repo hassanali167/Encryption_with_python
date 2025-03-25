@@ -7,6 +7,7 @@ cipher = ARC4.new(key)
 message = "Hello, RC4!"
 ciphertext = cipher.encrypt(message.encode())
 
+
 print("Ciphertext:", base64.b64encode(ciphertext).decode())
 
 # Decrypt
