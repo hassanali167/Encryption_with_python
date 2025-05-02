@@ -8,7 +8,6 @@ key = b'8bytekey'
 message = "Hello123"  # Must be 8 bytes long
 cipher = DES.new(key, DES.MODE_ECB)
 
-
 # Encrypt
 ciphertext = cipher.encrypt(message.encode())
 print("Ciphertext:", base64.b64encode(ciphertext).decode())
