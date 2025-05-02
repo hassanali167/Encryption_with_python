@@ -7,7 +7,6 @@ public_key = key.publickey().export_key()
 private_key = key.export_key()
 
 
-
 # Encrypt message
 message = "Hello, Secure World!"
 rsa_public_key = RSA.import_key(public_key)
